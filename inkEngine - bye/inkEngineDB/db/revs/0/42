@@ -1,0 +1,130 @@
+PLAIN
+K 9
+error.cpp
+V 18
+file 4-6.0.r20/184
+K 8
+file.cpp
+V 18
+file 6-6.0.r6/1636
+K 6
+file.h
+V 18
+file 7-6.0.r6/2005
+K 10
+graphics.c
+V 17
+file 8-6.0.r6/360
+K 10
+graphics.h
+V 17
+file 9-6.0.r6/909
+K 5
+ink.h
+V 18
+file a-6.0.r6/2376
+K 7
+input.c
+V 15
+file b-6.0.r6/0
+K 9
+input.cpp
+V 17
+file 2-27.0.r27/0
+K 7
+input.h
+V 17
+file c-6.0.r6/727
+K 7
+macro.h
+V 18
+file d-6.0.r6/1093
+K 10
+memory.cpp
+V 18
+file e-6.0.r6/1454
+K 9
+message.c
+V 18
+file f-6.0.r6/1820
+K 9
+message.h
+V 18
+file g-6.0.r6/2744
+K 11
+network.cpp
+V 17
+file 2-33.0.r33/0
+K 10
+string.cpp
+V 17
+file 2-41.0.r41/0
+K 10
+thread.cpp
+V 17
+file 1-20.0.r20/0
+K 7
+win32.h
+V 18
+file i-6.0.r6/1276
+K 9
+windows.c
+V 18
+file j-6.0.r6/3117
+K 9
+windows.h
+V 17
+file k-6.0.r6/180
+END
+ENDREP
+id: 0-6.0.r42/725
+type: dir
+pred: 0-6.0.r41/950
+count: 8
+text: 42 0 712 712 4dca25c5de97ce34edd6174273e7f97c
+cpath: /inkSource
+copyroot: 0 /
+
+PLAIN
+K 3
+Dev
+V 19
+dir 0-14.0.r41/1193
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 10
+inkConsole
+V 21
+dir 0-8.0.r30/3778124
+K 9
+inkDesign
+V 18
+dir 0-11.0.r39/413
+K 9
+inkSource
+V 17
+dir 0-6.0.r42/725
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+END
+ENDREP
+id: 0.0.r42/1130
+type: dir
+pred: 0.0.r41/1597
+count: 42
+text: 42 867 250 250 9b1299a188c10ef9d31d4dd4b86a9cb1
+cpath: /
+copyroot: 0 /
+
+h-6.0.r6/2557 delete-file false false /inkSource/strings.cpp
+
+
+1130 1264

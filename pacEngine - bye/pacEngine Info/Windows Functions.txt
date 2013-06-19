@@ -1,0 +1,33 @@
+Error Handling
+--------------
+UINT	=	GetLastError()
+BOOL	=	FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_ALLOCATE_BUFFER, NULL, dwError, MAKELANGID(LANG_ENGLISH, SUBLANG_ENGLISH_US), (LPTSTR)&hLocal, 0, NULL)
+@err, hr	Visual Studio Error Watch
+
+
+String Handling
+---------------
+EnumResourceLanguagesW
+EnumResourceNamesW
+EnumResourceTypesW
+ExtTextOutW
+FindResourceW
+FindResourceExW
+GetChaeWidthW
+GetCommandLineW
+GetTextExtentPoint32W
+GetTextExtentPointW
+MessageBoxExW
+MessageBoxW
+TextOutW
+WideCharToMultiByte
+MultiByteToWideChar
+
+lstrlenW
+lstrcatW
+lstrcpyW
+
+
+
+
+

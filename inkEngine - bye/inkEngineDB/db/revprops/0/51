@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 2
+hp
+K 8
+svn:date
+V 27
+2012-01-05T19:38:06.971021Z
+K 7
+svn:log
+V 43
+string.cpp update with operator overloading
+END

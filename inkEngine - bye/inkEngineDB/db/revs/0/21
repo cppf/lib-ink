@@ -1,0 +1,56 @@
+PLAIN
+END
+ENDREP
+id: 0-14.0.r21/17
+type: dir
+pred: 0-14.0.r19/961
+count: 6
+text: 21 0 4 4 2d2977d1c96f487abe4a1e202dd03b4e
+cpath: /Dev
+copyroot: 0 /
+
+PLAIN
+K 3
+Dev
+V 17
+dir 0-14.0.r21/17
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 10
+inkConsole
+V 21
+dir 0-8.0.r13/9490375
+K 9
+inkDesign
+V 19
+dir 0-11.0.r12/1221
+K 9
+inkSource
+V 18
+dir 0-6.0.r20/1077
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+END
+ENDREP
+id: 0.0.r21/413
+type: dir
+pred: 0.0.r20/1486
+count: 21
+text: 21 150 250 250 672f91d70c6062c526e65161e4a559b4
+cpath: /
+copyroot: 0 /
+
+2-14.0.r19/663 delete-file false false /Dev/thread.cpp
+
+1-15.0.r16/81 delete-file false false /Dev/error.cpp
+
+
+413 546

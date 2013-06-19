@@ -1,0 +1,176 @@
+PLAIN
+K 5
+Debug
+V 21
+dir w-2.0.r2/27832036
+K 10
+ReadMe.txt
+V 23
+file 30-2.0.r2/27833265
+K 11
+dllmain.cpp
+V 22
+file q-2.0.r2/27819123
+K 16
+interruptGuy.cpp
+V 20
+file 3-5.0.r5/201474
+K 7
+macro.h
+V 23
+file 2q-2.0.r2/27832196
+K 10
+stdafx.cpp
+V 23
+file 2w-2.0.r2/27832836
+K 8
+stdafx.h
+V 22
+file n-2.0.r2/27818913
+K 11
+targetver.h
+V 23
+file 2u-2.0.r2/27832621
+K 13
+theBigOne.cpp
+V 22
+file s-2.0.r2/27819336
+K 11
+theBigOne.h
+V 23
+file 2y-2.0.r2/27833050
+K 17
+theBigOne.vcxproj
+V 23
+file 36-2.0.r2/27833926
+K 25
+theBigOne.vcxproj.filters
+V 22
+file u-2.0.r2/27819553
+K 22
+theBigOne.vcxproj.user
+V 23
+file 32-2.0.r2/27833480
+K 13
+threadGuy.cpp
+V 21
+file 34-2.0.r4/165354
+K 7
+win32.h
+V 23
+file 2s-2.0.r2/27832409
+END
+ENDREP
+id: m-2.0.r6/713
+type: dir
+pred: m-2.0.r5/202449
+count: 4
+text: 6 0 700 700 0030264e97127b9a7b7437c63126f3aa
+cpath: /DLL Build/theBigOne/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 22
+dir 38-2.0.r2/27836916
+K 4
+ipch
+V 18
+dir g-2.0.r3/82109
+K 9
+theBigOne
+V 16
+dir m-2.0.r6/713
+K 17
+theBigOne.opensdf
+V 22
+file e-2.0.r2/27817831
+K 13
+theBigOne.sdf
+V 20
+file 9-2.0.r5/200956
+K 13
+theBigOne.sln
+V 22
+file c-2.0.r2/27817560
+K 13
+theBigOne.suo
+V 21
+file 3k-2.0.r5/202619
+END
+ENDREP
+id: 7-2.0.r6/1188
+type: dir
+pred: 7-2.0.r5/203217
+count: 4
+text: 6 875 300 300 ebe253fd9bfe2d5e7fcede137ff763fa
+cpath: /DLL Build/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 9
+theBigOne
+V 17
+dir 7-2.0.r6/1188
+END
+ENDREP
+id: 6-2.0.r6/1397
+type: dir
+pred: 6-2.0.r5/203433
+count: 4
+text: 6 1343 41 41 93cda53e8be0c7db53c24d2f00f2c8bb
+cpath: /DLL Build
+copyroot: 0 /
+
+PLAIN
+K 9
+DLL Build
+V 17
+dir 6-2.0.r6/1397
+K 8
+DLL Test
+V 22
+dir 3m-2.0.r2/27845141
+K 10
+Data Files
+V 22
+dir 4y-2.0.r2/27845271
+K 6
+Source
+V 21
+dir 0-2.0.r2/27816799
+K 13
+Support Tools
+V 22
+dir 4z-2.0.r2/27845347
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+K 5
+zInfo
+V 21
+dir 2-2.0.r2/27817103
+END
+ENDREP
+id: 0.0.r6/1897
+type: dir
+pred: 0.0.r5/203939
+count: 6
+text: 6 1541 343 343 64e72fc499d86b997512c48398811e85
+cpath: /
+copyroot: 0 /
+
+3-4.0.r5/201238 delete-file false false /DLL Build/theBigOne/theBigOne/messageGuy.cpp
+
+
+1897 2030

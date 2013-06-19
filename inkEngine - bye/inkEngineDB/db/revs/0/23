@@ -1,0 +1,65 @@
+id: 1-23.0.r23/0
+type: file
+count: 0
+text: 2 846 3277 18136 aef8ba01c0d602d0fc26da593f2fb17d 2e03f9761a37a61b418d48424979e852a44d2b63 22-m/_3
+cpath: /Dev/input.cpp
+copyroot: 0 /
+
+PLAIN
+K 9
+input.cpp
+V 17
+file 1-23.0.r23/0
+END
+ENDREP
+id: 0-14.0.r23/233
+type: dir
+pred: 0-14.0.r21/17
+count: 7
+text: 23 179 41 41 30bada4d6af3c98509d3ee0ef8f7f214
+cpath: /Dev
+copyroot: 0 /
+
+PLAIN
+K 3
+Dev
+V 18
+dir 0-14.0.r23/233
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 10
+inkConsole
+V 21
+dir 0-8.0.r13/9490375
+K 9
+inkDesign
+V 19
+dir 0-11.0.r12/1221
+K 9
+inkSource
+V 17
+dir 0-6.0.r22/650
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+END
+ENDREP
+id: 0.0.r23/633
+type: dir
+pred: 0.0.r22/1055
+count: 23
+text: 23 370 250 250 a50028defd7d304239babcf8bd368c94
+cpath: /
+copyroot: 0 /
+
+_1.0.t22-m add-file true false /Dev/input.cpp
+
+
+633 766

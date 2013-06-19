@@ -1,0 +1,76 @@
+/****************************************************************************
+ *                                                                          *
+ * File    : strings.cpp                                                    *
+ *                                                                          *
+ * Purpose : String handling Routines for C++                               *
+ *                                                                          *
+ * History : Date      Part of INK Game Engine                              *
+ *           5/12/2011  Subhajit Sahu                                       *
+ *                                                                          *
+ ****************************************************************************/
+
+
+#ifndef	_strings_cpp_
+
+#define	_strings_cpp_		1
+
+
+
+
+// ----Includes------------------------------------------------------
+#include <string.h>
+
+
+
+// ----Prototypes----------------------------------------------------
+UINT	inkStrlenW(void* string);
+void	inkStrcpyWA(void* destW, void* srcA);
+
+
+
+
+
+
+
+// ----Code----------------------------------------------------------
+
+#define		inkStrlenA(string)	\
+strlen(string)
+
+
+
+// Find the length of a unicode string
+UINT	inkStrlenW(void* string)
+	{
+	short* ptr;
+	ptr = string;
+	while(*ptr)
+		ptr++;
+	return((UINT)(ptr - (short*)string));
+	}
+
+
+
+// Copy an ASCII string for srcA to unicode string at destW
+void	inkStrcpyWA(void* destW, void* srcA)
+	{
+	char* src;
+	short* dest;
+	short c;
+	src = srcA;
+	dest = destW;
+	do
+		{
+		c = *src;
+		*dest = c;
+		src++;
+		dest++;
+		}
+	while(c);
+	}
+
+
+
+
+#endif
+

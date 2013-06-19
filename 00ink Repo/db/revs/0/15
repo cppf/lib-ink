@@ -1,0 +1,235 @@
+id: 6-15.0.r15/0
+type: file
+count: 0
+text: 10 8083546 1054 5643 132ff1b534e013c18c15e65826b4d26a 1c9f589b234cb941368a9cf2d4d94fc23e47dd42 14-e/_b
+cpath: /DLL Build/theBigOne/theBigOne/fileGuy.cpp
+copyroot: 0 /
+
+id: 7-15.0.r15/211
+type: file
+count: 0
+text: 10 8083546 1054 5643 132ff1b534e013c18c15e65826b4d26a 1c9f589b234cb941368a9cf2d4d94fc23e47dd42 14-e/_a
+cpath: /DLL Build/theBigOne/theBigOne/networkGuy.cpp
+copyroot: 0 /
+
+id: 5-15.0.r15/427
+type: file
+count: 0
+text: 10 8083546 1054 5643 132ff1b534e013c18c15e65826b4d26a 1c9f589b234cb941368a9cf2d4d94fc23e47dd42 14-e/_9
+cpath: /DLL Build/theBigOne/theBigOne/errorGuy.cpp
+copyroot: 0 /
+
+id: 3-15.0.r15/641
+type: file
+count: 0
+text: 10 8083546 1054 5643 132ff1b534e013c18c15e65826b4d26a 1c9f589b234cb941368a9cf2d4d94fc23e47dd42 14-e/_c
+cpath: /DLL Build/theBigOne/theBigOne/consoleGuy.cpp
+copyroot: 0 /
+
+id: 8-15.0.r15/857
+type: file
+count: 0
+text: 10 8083546 1054 5643 132ff1b534e013c18c15e65826b4d26a 1c9f589b234cb941368a9cf2d4d94fc23e47dd42 14-e/_d
+cpath: /DLL Build/theBigOne/theBigOne/windowGuy.cpp
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 21
+dir w-2.0.r2/27832036
+K 10
+ReadMe.txt
+V 23
+file 30-2.0.r2/27833265
+K 14
+consoleGuy.cpp
+V 19
+file 3-15.0.r15/641
+K 11
+dllmain.cpp
+V 22
+file q-2.0.r2/27819123
+K 12
+errorGuy.cpp
+V 19
+file 5-15.0.r15/427
+K 11
+fileGuy.cpp
+V 17
+file 6-15.0.r15/0
+K 16
+interruptGuy.cpp
+V 23
+file 3-5.0.r10/16047425
+K 7
+macro.h
+V 23
+file 2q-2.0.r2/27832196
+K 14
+networkGuy.cpp
+V 19
+file 7-15.0.r15/211
+K 10
+stdafx.cpp
+V 23
+file 2w-2.0.r2/27832836
+K 8
+stdafx.h
+V 22
+file n-2.0.r2/27818913
+K 11
+targetver.h
+V 23
+file 2u-2.0.r2/27832621
+K 13
+theBigOne.cpp
+V 17
+file s-2.0.r11/81
+K 11
+theBigOne.h
+V 23
+file 2y-2.0.r2/27833050
+K 17
+theBigOne.vcxproj
+V 21
+file 36-2.0.r7/488387
+K 25
+theBigOne.vcxproj.filters
+V 20
+file u-2.0.r7/487903
+K 22
+theBigOne.vcxproj.user
+V 23
+file 32-2.0.r2/27833480
+K 13
+threadGuy.cpp
+V 21
+file 34-2.0.r7/488151
+K 7
+win32.h
+V 23
+file 2s-2.0.r2/27832409
+K 13
+windowGuy.cpp
+V 19
+file 8-15.0.r15/857
+END
+ENDREP
+id: m-2.0.r15/1996
+type: dir
+pred: m-2.0.r11/1018
+count: 9
+text: 15 1072 911 911 6951ee9b566d0a258b738977a059b2dd
+cpath: /DLL Build/theBigOne/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 22
+dir 38-2.0.r2/27836916
+K 4
+ipch
+V 19
+dir g-2.0.r14/77096
+K 9
+theBigOne
+V 18
+dir m-2.0.r15/1996
+K 13
+theBigOne.sdf
+V 20
+file 9-2.0.r14/76163
+K 13
+theBigOne.sln
+V 22
+file c-2.0.r2/27817560
+K 13
+theBigOne.suo
+V 21
+file 3k-2.0.r14/77262
+END
+ENDREP
+id: 7-2.0.r15/2428
+type: dir
+pred: 7-2.0.r14/77811
+count: 13
+text: 15 2163 252 252 835aaf96025056d1864af1bf88930973
+cpath: /DLL Build/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 9
+theBigOne
+V 18
+dir 7-2.0.r15/2428
+END
+ENDREP
+id: 6-2.0.r15/2642
+type: dir
+pred: 6-2.0.r14/78029
+count: 13
+text: 15 2587 42 42 dc62188e5f088f0eb5f02a07284da53d
+cpath: /DLL Build
+copyroot: 0 /
+
+PLAIN
+K 9
+DLL Build
+V 18
+dir 6-2.0.r15/2642
+K 8
+DLL Test
+V 23
+dir 3m-2.0.r10/16055736
+K 10
+Data Files
+V 22
+dir 4y-2.0.r2/27845271
+K 6
+Source
+V 21
+dir 0-2.0.r2/27816799
+K 13
+Support Tools
+V 22
+dir 4z-2.0.r2/27845347
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+K 5
+zInfo
+V 21
+dir 2-2.0.r2/27817103
+END
+ENDREP
+id: 0.0.r15/3147
+type: dir
+pred: 0.0.r14/78538
+count: 15
+text: 15 2789 345 345 53ff62b62e7efad5839e15e449a970e5
+cpath: /
+copyroot: 0 /
+
+_8.0.t14-e add-file true false /DLL Build/theBigOne/theBigOne/windowGuy.cpp
+
+_5.0.t14-e add-file true false /DLL Build/theBigOne/theBigOne/errorGuy.cpp
+
+_7.0.t14-e add-file true false /DLL Build/theBigOne/theBigOne/networkGuy.cpp
+
+_6.0.t14-e add-file true false /DLL Build/theBigOne/theBigOne/fileGuy.cpp
+
+_3.0.t14-e add-file true false /DLL Build/theBigOne/theBigOne/consoleGuy.cpp
+
+
+3147 3283

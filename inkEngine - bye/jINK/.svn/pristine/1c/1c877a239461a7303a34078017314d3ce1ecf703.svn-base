@@ -1,0 +1,32 @@
+General File Format Information
+-------------------------------
+
+8*CHAR			File Header
+DWORD			FileCheckSum (of all bytes after this)
+QWORD			FileInfo Ptr
+DWORD			No of packets
+QWORD			Offest to Packet name list(Can be null)
+
+:Packet Address List
+QWORD			Packet 0
+QWORD			Packet 1
+QWORD			Packet 2
+...
+
+:Packet Name List
+QWORD			Packet 0 name ptr
+QWORD			Packet 1 name ptr
+QWORD			Packet 2 name ptr
+...
+
+:Packet names
+LASCIIZ			Packet 0 name
+LASCIIZ			Packet 1 name
+LASCIIZ			Packet 2 name
+...
+
+:Packet 0
+DWORD			Packet type
+DWORD			Packet size
+DWORD			Packet data
+

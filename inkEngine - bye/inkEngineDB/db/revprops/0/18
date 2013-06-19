@@ -1,0 +1,14 @@
+K 10
+svn:author
+V 2
+hp
+K 8
+svn:date
+V 27
+2011-12-28T19:09:01.659400Z
+K 7
+svn:log
+V 88
+nice update of thread.cpp.
+yet to add messaging function for inter-thread communication.
+END

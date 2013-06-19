@@ -1,0 +1,101 @@
+PLAIN
+K 5
+Debug
+V 22
+dir 38-2.0.r2/27836916
+K 4
+ipch
+V 18
+dir g-2.0.r3/82109
+K 9
+theBigOne
+V 19
+dir m-2.0.r7/489337
+K 13
+theBigOne.sdf
+V 20
+file 9-2.0.r7/487384
+K 13
+theBigOne.sln
+V 22
+file c-2.0.r2/27817560
+K 13
+theBigOne.suo
+V 21
+file 3k-2.0.r7/489504
+END
+ENDREP
+id: 7-2.0.r8/265
+type: dir
+pred: 7-2.0.r7/490104
+count: 6
+text: 8 0 252 252 b00243d1a789aec6a08857b336fd095f
+cpath: /DLL Build/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 9
+theBigOne
+V 16
+dir 7-2.0.r8/265
+END
+ENDREP
+id: 6-2.0.r8/470
+type: dir
+pred: 6-2.0.r7/490318
+count: 6
+text: 8 417 40 40 d7976c3b4af146151bb14e4123362f4f
+cpath: /DLL Build
+copyroot: 0 /
+
+PLAIN
+K 9
+DLL Build
+V 16
+dir 6-2.0.r8/470
+K 8
+DLL Test
+V 22
+dir 3m-2.0.r2/27845141
+K 10
+Data Files
+V 22
+dir 4y-2.0.r2/27845271
+K 6
+Source
+V 21
+dir 0-2.0.r2/27816799
+K 13
+Support Tools
+V 22
+dir 4z-2.0.r2/27845347
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+K 5
+zInfo
+V 21
+dir 2-2.0.r2/27817103
+END
+ENDREP
+id: 0.0.r8/967
+type: dir
+pred: 0.0.r7/490822
+count: 8
+text: 8 612 342 342 9636c16533d779c448ceda117c69be91
+cpath: /
+copyroot: 0 /
+
+e-2.0.r2/27817831 delete-file false false /DLL Build/theBigOne/theBigOne.opensdf
+
+
+967 1098

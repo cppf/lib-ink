@@ -1,0 +1,19 @@
+Game Structure with inkEngine
+-----------------------------
+
+inkEngine Initialization.
+Game Environment Initialization.
+Call to main_game_code.
+
+
+main_game_code:
+open files
+load data from files
+waitBeforeRead(data)
+read and manipulate data
+produce outputs
+
+
+
+
+

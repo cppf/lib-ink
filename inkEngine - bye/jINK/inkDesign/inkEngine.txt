@@ -1,0 +1,43 @@
+inkEngine
+---------
+
+
+The parts of inkEngine:
+
+(a) File	- file and disk handling functions
+(b) Error	- error management functions
+(c) Window UI	- windows creation and management functions
+(d) General	- some general functions (for multithreading, etc.)
+(e) Network	- all networking power that’s required.
+(f) Sound	- sound support with 3D sound support even if not present.
+(g) Input	- from mouse, keyboard, joystick all integrated.
+(h) Graphics	- general 2D graphics functions (incl. Animations)
+(i) 3D		- 3D graphics functions with HDR + Wow Lighting support
+(j) GPU		- GPU utilization functions
+
+
+Basic Structure of the Engine
+Except for some small functions, those which are choosy make use of a memory access 
+which then directs to the function.
+
+
+File:
+Essenatial Operations
+Open an inkFile (with / without checksum check)
+Get number of packets
+Get packet name from number
+Get packet number from name
+Get packet type
+Load a packet.
+Load a list of packets.
+Clear a packet from mem
+
+Multithreading
+Files are opened non-blockingly.
+File I/O performed non-blockingly.
+File data write should wait before reading complete.
+
+
+
+
+

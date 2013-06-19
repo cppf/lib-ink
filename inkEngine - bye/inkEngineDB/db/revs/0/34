@@ -1,0 +1,65 @@
+id: 1-34.0.r34/0
+type: file
+count: 0
+text: 2 846 3277 18136 aef8ba01c0d602d0fc26da593f2fb17d 2e03f9761a37a61b418d48424979e852a44d2b63 33-x/_3
+cpath: /Dev/input.c
+copyroot: 0 /
+
+PLAIN
+K 7
+input.c
+V 17
+file 1-34.0.r34/0
+END
+ENDREP
+id: 0-14.0.r34/229
+type: dir
+pred: 0-14.0.r33/1073
+count: 18
+text: 34 177 39 39 ab56e8ba6d6c9980c2b2e80f11d9e30e
+cpath: /Dev
+copyroot: 0 /
+
+PLAIN
+K 3
+Dev
+V 18
+dir 0-14.0.r34/229
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 10
+inkConsole
+V 21
+dir 0-8.0.r30/3778124
+K 9
+inkDesign
+V 19
+dir 0-11.0.r12/1221
+K 9
+inkSource
+V 17
+dir 0-6.0.r33/912
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+END
+ENDREP
+id: 0.0.r34/632
+type: dir
+pred: 0.0.r33/1476
+count: 34
+text: 34 369 250 250 828f559104687b95cffde94b4de64ebd
+cpath: /
+copyroot: 0 /
+
+_1.0.t33-x add-file true false /Dev/input.c
+
+
+632 765

@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:o="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>404 Error Page</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="http://www.amd.com/Style%20Library/main.css" />
+<link rel="shortcut icon" href="http://www.amd.com/Style Library/Images/favicon.ico" /><title>
+</title>
+</head>
+
+
+<body>
+<!-- SiteCatalyst code version: H.20.3. Copyright 1997-2009 Omniture, Inc. More info available athttp://www.omniture.com -->
+		<script language="JavaScript" type="text/javascript" src="http://www.amd.com/us/as/custom.js"></script>
+
+		<script language="JavaScript" type="text/javascript" src="http://www.amd.com/us/as/scode_404.js"></script>
+
+		<script language="JavaScript" type="text/javascript"><!--
+			/* You may give each page an identifying name, server, and channel on the next lines. */
+			s.pageName=""
+			s.server=""
+			s.channel=""
+			s.pageType="errorPage"
+			s.prop1=""
+			s.prop2=""
+			s.prop3=""
+			s.prop4=""
+			s.prop5=""
+			s.prop6=""
+			s.prop7=""
+			s.prop8=""
+			s.prop9=""
+			/* Conversion Variables */
+			s.campaign=""
+			s.state=""
+			s.zip=""
+			s.events=""
+			s.products=""
+			s.purchaseID=""
+			s.eVar1=""
+			s.eVar2=""
+			s.eVar3=""
+			s.eVar4=""
+			s.eVar5=""
+			s.eVar6=""
+			s.eVar7=""
+		/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+		var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+		<script language="JavaScript" type="text/javascript"><!--
+		if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+		//--></script>
+		<noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+		src="http://metrics.amd.com/b/ss/amdvglobal/1/H.20.3--NS/0?[AQB]&cdp=3&[AQE]"
+		height="1" width="1" border="0" alt="" /></a></noscript>
+		<!--/DO NOT REMOVE/-->
+	<!-- End SiteCatalyst code version: H.20.3. -->
+
+
+<div class="page">
+
+
+<!-- BEGIN Page Content -->
+
+	<!-- BEGIN Header -->
+
+	<div id="masthead">
+		<div id="logo">
+			<a href="http://www.amd.com"><img alt="AMD Logo" src="http://www.amd.com/Style%20Library/Images/AMD/amd_logo.png" /></a>
+		</div>
+
+		<div class="SecondaryNav">
+		<table>
+
+			<tr>
+				<td valign="top">
+					<ul id="worldwide">
+						<li><a>Worldwide
+								<img src="http://www.amd.com/Style%20Library/Images/AMD/worldwide_arrow.png" style="padding-left:3px;"/></a>
+							<ul>
+								<li><a href="/us" name="&lid=WW|NorthAmerica">North America - English</a></li>
+								<!--  <li><a href="/ca" name="&lid=WW|Canada">Canada - English</a></li> -->
+								<li><a href="/la" name="&lid=WW|LatinAmerica">Español</a></li>
+
+								<li><a href="/br" name="&lid=WW|Portugal">Português</a></li>
+								<li><a href="/de" name="&lid=WW|Germany">Deutsch</a></li>
+								<li><a href="/uk" name="&lid=WW|UnitedKingdom">United Kingdom - English</a></li>
+								<li><a href="/es" name="&lid=WW|Spain">Español</a></li>
+								<li><a href="/fr" name="&lid=WW|France">Français</a></li>
+								<li><a href="/it" name="&lid=WW|Italy">Italiano</a></li>
+
+								<li><a href="/pl" name="&lid=WW|Polan">Polski</a></li>
+								<li><a href="/ru" name="&lid=WW|Russia">??????? ????</a></li>
+								<li><a href="/tr" name="&lid=WW|Turkey">Türkçe</a></li>
+								<li><a href="/se" name="&lid=WW|Sweden">Nordic</a></li>
+								<!--  <li><a href="/in" name="&lid=WW|India">India - English</a></li> -->
+								<!--  <li><a href"/sa" name="&lid=WW|SouthAsia">South Asia - English</a></li> -->
+								<li><a href="/jp" name="&lid=WW|Japan">???</a></li>
+
+								<li><a href="/kr" name="&lid=WW|Korea">???</a></li>
+								<li><a href="/cn" name="&lid=WW|China">????</a></li>
+								<li><a href="/tw" name="&lid=WW|Taiwan">????</a></li>
+								<!--  <li><a href="/th" name="&lid=WW|Thailand">???</a></li> -->
+								<li><a href="/au" name="&lid=WW|Australia">Australia - English</a></li>
+								<li><a href="/hk" name="&lid=WW|HongKong">Hong Kong - English</a></li>
+
+								<li><a href="/in" name="&lid=WW|India">India - English</a></li>
+								<li><a href="/sg" name="&lid=WW|Singapore">Singapore - English</a></li>
+								<li><a href="/my" name="&lid=WW|Malaysia">Malaysia - English</a></li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+
+				<td valign="top">
+					&nbsp;|&nbsp;
+					<a href="http://www.amd.com/us/aboutamd">About AMD</a> &nbsp;|&nbsp;
+					<a href="http://www.amd.com/us/aboutamd/newsroom/">News</a> &nbsp;|&nbsp;
+					<a href="http://www.amd.com/us/shophome">Compare &amp; Shop</a>&nbsp;&nbsp;&nbsp;
+				</td>
+
+				<td valign="top">
+					<div id="sitesearch"><div id="SRSB"><div id="ctl00_PlaceHolderSearchBox_SearchBox"><table width="100%" border="0" cellspacing="0" cellpadding="1"><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="1"><tr>
+
+						<form name="searchForm" id="searchForm" method="get" action="http://search.amd.com/US/_layouts/search/search.aspx">
+							<td pid="5cb4e6a3-7a31-4337-9d09-7b368394557b">
+								<input name="csquery" type="text" value="&lt;Search AMD&gt;" maxlength="200" id="SearchBox_keyword" accesskey="S" title="Enter search words" onfocus="if (this.value.indexOf('Search AMD') &gt; 0){this.value='';} " onblur="if (this.value =='') {this.value='&lt;Search AMD&gt;';}" class="ms-sbplain" alt="Enter search words" style="border:none;"/>
+								<input type="hidden" name="collection" value="all-us">
+							</td>
+							<td pid="5aa9ef8e-6491-41af-b259-2a47d0353790" valign="bottom">
+								<a id="SearchBox_go" title="Go Search" href="javascript:document.getElementById('searchForm').submit();">
+
+									<img title="Go Search" alt="Go Search" src="http://www.amd.com/Style%20Library/Images/AMD/search_icon.png" style="border-width:0px;"/>
+								</a>
+							</td>
+
+						</form>
+                  </tr></table></td></tr></table></div></div></div>
+                                   </td>
+			</tr>
+		</table>
+
+    </div>
+
+
+           <div id="PrimaryNav">
+					</div>
+
+	</div>
+	<!-- END Header -->
+
+
+
+
+		<div class="maincontent_top"></div>
+
+
+			<div class="maincontent">
+
+		<div style="width:968px; margin:auto;">
+
+
+	<!-- BEGIN Main Content -->
+<div style="width:968px;">
+
+<table cellpadding="0" border="0" width="100%" >
+	<tr>
+		<td colspan="4">
+			<h1>Oops!</h1>
+		</td>
+
+	</tr>
+
+	<tr>
+		<td colspan="4">
+			<div id="ctl00_PlaceHolderMain_RichHtmlField1__ControlWrapper_RichHtmlField" style="display:inline"><p>We apologize.  The page you are trying to reach cannot be found.  This may have happened for a few reasons:</p>
+<ul>
+    <li>The page has been moved </li>
+    <li>The page has been deleted </li>
+    <li>There was a typo or error in the link you clicked </li>
+
+    <li>There was a typo or error in a URL typed into the browser </li>
+</ul>
+<p>To find what you're looking for, use the search box below or the most popular pages on our website to guide you in the right direction.</p>
+<h2>Search AMD.com</h2>
+
+		<div id="sitesearch2">
+
+			<table width="20%" border="0" cellspacing="0" cellpadding="1"><tr>
+
+					<form name="searchForm2" id="searchForm2" method="get" action="http://search.amd.com/US/_layouts/search/search.aspx">
+						<td>
+
+							<input name="csquery" type="text" value="&lt;Search AMD&gt;" maxlength="200" id="SearchBox_keyword" accesskey="S" title="Enter search words" onfocus="if (this.value.indexOf('Search AMD') &gt; 0){this.value='';} " onblur="if (this.value =='') {this.value='&lt;Search AMD&gt;';}" class="ms-sbplain" alt="Enter search words" style="width:170px;color:black;"/>
+							<input type="hidden" name="collection" value="all-us">
+						</td>
+						<td valign="bottom">
+							<a id="SearchBox_go" title="Go Search" href="javascript:document.getElementById('searchForm2').submit();">
+								<img title="Go Search" alt="Go Search" src="http://www.amd.com/Style%20Library/Images/amdv3/search_go.gif" style="border-width:0px; padding-left:5px;"/>
+							</a>
+						</td>
+
+					</form>
+
+				</tr>
+			</table>
+		</div>
+<br />
+
+<h2>Popular Pages</h2>
+</div>
+</td>
+</tr>
+
+	<tr valign="top" style="padding-bottom:22px;">
+		<td style="width: 25%; margin-right:11px;">
+		<div  style="display:inline"><table  cellspacing="0" cellpadding="0" class="slm-layout-main"><tr><td id="column" width="100%" valign="top"><div id="group" class="slm-layout-main"><div style="font-weight:bold;">Support &amp; Drivers</div><div id="linkitem" ><ul class="linklist"><li><a href="http://support.amd.com/us/gpudownload/" target="" title="Graphics Drivers">Graphics Drivers</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://support.amd.com/us/psearch/Pages/psearch.aspx?type=2.1&amp;product=&amp;contentType=Tech Download Processor" target="" title="Processor Drivers">Processor Drivers</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://support.amd.com/us/psearch/Pages/psearch.aspx" target="" title="Knowledgebase">Knowledgebase</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://support.amd.com/us/System-Building-and-Compatibility/Pages/SystemBuildingandCompatibilityInformation.aspx" target="" title="Processor Compatibility">Processor Compatibility</a></li></ul></div><div id="footer"></div></td ></tr></table></div>
+
+		</td>
+
+		<td style="width: 25%; margin-right:11px;">
+		<div  style="display:inline"><table  cellspacing="0" cellpadding="0" class="slm-layout-main"><tr><td id="column" width="100%" valign="top"><div id="group" class="slm-layout-main"><div style="font-weight:bold;">Products &amp; Technologies</div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/US/PRODUCTS/DESKTOP/Pages/desktop.aspx" target="" title="Desktop Products">Desktop Products</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/US/PRODUCTS/NOTEBOOK/Pages/notebook.aspx" target="" title="Notebook Products">Notebook Products</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/US/PRODUCTS/WORKSTATION/Pages/workstation.aspx" target="" title="">Workstation Products</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/products/server/Pages/server.aspx" target="" title="Server Products">Server Products</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/products/Pages/graphics.aspx" target="" title="See all Graphics Cards">See all Graphics Cards</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/products/Pages/processors.aspx" target="" title="See all Processors">See all Processors</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/products/Pages/chipsets.aspx" target="" title="See all Chipsets">See all Chipsets</a></li></ul></div><div id="footer"></div></td ></tr></table></div>
+
+		</td>
+
+
+                <td style="width: 25%; margin-right:11px;">
+				<div  style="display:inline"><table  cellspacing="0" cellpadding="0" class="slm-layout-main"><tr><td id="column" width="100%" valign="top"><div id="group" class="slm-layout-main"><div style="font-weight:bold;">Resources</div><div id="linkitem" ><ul class="linklist"><li><a href="http://shop.amd.com/" target="" title="Shop AMD">Shop AMD</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://products.amd.com/" target="" title="Product Spec Comparison">Product Spec Comparison</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://game.amd.com/" target="" title="For Gamers">For Gamers</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/vision" target="" title="For Home">For Home</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://sites.amd.com/us/business" target="" title="For Work">For Work</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/partners/" target="" title="For Resellers &amp; Partners">For Resellers &amp; Partners</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://developer.amd.com/" target="" title="For Software Developers">For Software Developers</a></li></ul></div><div id="footer"></div></td ></tr></table></div>
+
+
+		</td>
+
+
+		<td style="width: 25%; margin-right:11px;">
+		<div  style="display:inline"><table  cellspacing="0" cellpadding="0" class="slm-layout-main"><tr><td id="column" width="100%" valign="top"><div id="group" class="slm-layout-main"><div style="font-weight:bold;">About AMD</div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/aboutamd/corporate-information/corporate-responsibility/" target="" title="Vision &amp; Mission">Corporate Responsibility</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/aboutamd/contact-us/Pages/contact-us.aspx" target="" title="Contact Us">Contact Us</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://phx.corporate-ir.net/phoenix.zhtml?c=74093&amp;p=irol-IRHome" target="" title="Investor Relations">Investor Relations</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/aboutamd/newsroom/Pages/newsroom.aspx" target="" title="News Room">News Room</a></li></ul></div><div id="linkitem" ><ul class="linklist"><li><a href="http://www.amd.com/us/aboutamd/careers/Pages/careers.aspx" target="" title="Careers">Careers</a></li></ul></div><div id="footer"></div></td ></tr></table></div>
+		</td>
+
+            </tr>
+
+
+            </table>
+
+</div>
+
+<div class="footer">
+
+
+     						<div id="rtp" style="vertical-align:text-bottom">
+								<script language="javascript" type="text/javascript" charset="windows-1252" src="http://www.amd.com/Style%20Library/rtp/rate.js"></script>
+<script language="javascript" type="text/javascript" charset="windows-1252">
+rtpPrint('<a class="rtpbutton rtpico" href="javascript:rtpOpenWindow()" title="Please give us your feedback">Rate This Page</a>');
+</script>
+<span id="sharethis"><script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=c6e0f155-080a-4bcb-ac61-4c0e08056192&amp;type=website"></script></span>
+			</div>
+
+    <!-- END Main Content -->
+
+
+<!-- BEGIN Footer -->
+
+<ul class="links">
+<li class="first">
+<a href="http://www.amd.com/us/aboutamd/contact-us">Contact Us</a></li>
+<li><a href="http://www.amd.com/us/aboutamd/careers" target="_blank">Careers</a></li>
+<li><a href="http://phx.corporate-ir.net/phoenix.zhtml?c=74093&p=irol-IRHome">Investor Relations</a></li>
+<li><a href="http://www.amd.com/subscribe">Subscribe</a></li>
+<li><a href="http://www.amd.com/us/Pages/sitemap.aspx">Site Map</a></li>
+
+</ul>
+
+<br />
+<ul class="links" style="width:100%;">
+<li class="first"><a href="http://www.amd.com/us-en/" target="_blank">©<script type="text/javascript" language="javascript">document.write(new Date().getFullYear());</script><noscript>2011</noscript> Advanced Micro Devices, Inc.</a></li>
+<li><a href="http://www.amd.com/us/aboutamd/Pages/copyright.aspx">Terms and Conditions</a></li>
+<li><a href="http://www.amd.com/us/aboutamd/Pages/privacy.aspx">Privacy</a></li>
+<li><a href="http://www.amd.com/us/aboutamd/Pages/trademarks.aspx">Trademarks</a></li>
+</ul>
+</div>
+
+
+<!-- END Footer -->
+
+</div>
+	</div>
+
+
+<!-- END Page Content -->
+</div>
+
+	</body>
+</html>

@@ -1,0 +1,873 @@
+/****************************************************************************
+ *                                                                          *
+ * File    : input.cpp                                                      *
+ *                                                                          *
+ * Purpose : Handling of all input for C++                                  *
+ *                                                                          *
+ * History : Date      		Part of INK Game Engine                         *
+ *           14/07/2011		Subhajit Sahu                                   *
+ *                                                                          *
+ ****************************************************************************/
+
+#ifndef		_input_cpp_
+
+#define		_input_cpp_		1
+
+
+
+// ----Includes------------------------------------------------------
+#include "win32.h"
+#include "macro.h"
+
+
+
+
+
+
+
+
+// ----Global Prototypes---------------------------------------------
+PROC	Msg_WM_CHAR(_MSG_PARAMS);
+PROC	Msg_WM_SYSCHAR(_MSG_PARAMS);
+PROC	Msg_WM_KEYDOWN(_MSG_PARAMS);
+PROC	Msg_WM_SYSKEYDOWN(_MSG_PARAMS);
+PROC	Msg_WM_KEYUP(_MSG_PARAMS);
+PROC	Msg_WM_SYSKEYUP(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONDOWN_Text(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONDOWN_Text(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONDOWN_Text(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONUP_Text(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONUP_Text(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONUP_Text(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONDBLCLK_Text(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONDBLCLK_Text(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONDBLCLK_Text(_MSG_PARAMS);
+PROC	Msg_WM_MOUSEWHEEL_Text(_MSG_PARAMS);
+PROC	Msg_WM_MOUSEMOVE_Text(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONDOWN_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONDOWN_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONDOWN_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONUP_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONUP_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONUP_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_LBUTTONDBLCLK_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_RBUTTONDBLCLK_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_MBUTTONDBLCLK_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_MOUSEWHEEL_Gaming(_MSG_PARAMS);
+PROC	Msg_WM_MOUSEMOVE_Gaming(_MSG_PARAMS);
+
+
+
+
+
+// ----Externals-----------------------------------------------------
+extern BOOL 	inkWindowStopServiceRequest;
+extern BOOL 	inkWindowStopServiceReady;
+extern HANDLE	inkWindowThread;
+
+
+
+
+// ----Constants-----------------------------------------------------
+#define			_ink_MODE_Text					1
+#define			_ink_MODE_Game					2
+#define			_inkMouseHoldPositionX			320
+#define			_inkMouseHoldPositionY			240
+#define			_In_inkInputControlSizeB		256
+#define			_In_TextSize					63
+#define			_In_TextSizeB					256
+#define			_In_GameSize					63
+#define			_In_GameSizeB					256
+#define			_In_inkInputGameStatusSizeB		32
+#define			_In_MouseSize					63
+#define			_In_MouseSizeB					256
+#define			_In_Key_MouseLeft				0xFF
+#define			_In_Key_MouseRight				0xFE
+#define			_In_Key_MouseMiddle				0xFD
+#define			_In_Key_MouseLeftDblClk			0xFC
+#define			_In_Key_MouseRightDblClk		0xFB
+#define			_In_Key_MouseMiddleDblClk		0xFA
+#define			_In_Key_MouseWheelPlus			0xF9
+#define			_In_Key_MouseWheelMinus			0xF8
+#define			_In_Key_MouseXmove				0xF7
+#define			_In_Key_MouseYmove				0xF6
+
+
+
+
+// ----Macros--------------------------------------------------------
+
+
+// Insert data to a queue whose size must be a power of 2 ( max = size-1 )
+// The macro may or may not be able to insert data to the queue
+#define		inkInsertQueue(queue, num, rear, max, data)	\
+if(num <= max)\
+{\
+	queue[rear] = data;\
+	rear = (rear+1) & max;\
+	num++;\
+}
+
+
+// Delete data from a queue whose size must be a power of 2 ( max = size-1 )
+// The macro may or may not be able to delete data from queue
+// data may contain garbage value if queue is empty and data is not initialized
+#define		inkDeleteQueue(queue, num, front, max, data)	\
+if(num)\
+{\
+data = queue[front];\
+front = (front+1) & max;\
+num--;\
+}\
+
+
+
+// ----Structures----------------------------------------------------
+
+typedef struct _MOUSE_SETTINGS
+{
+	DWORD		ThresholdX;
+	DWORD		ThresholdY;
+	DWORD		Acceleration;
+}MOUSE_SETTINGS;
+
+typedef struct _UINT2
+{
+	UINT	low;
+	UINT	high;
+}UINT2;
+
+
+
+// Global/Static Data
+static UINT				inkInputKeyMode;
+static void*			inkInputBaseMem;
+static UBYTE*			inkInputControl;
+static UBYTE*			inkInputTextBuffer;
+static UINT				inkInputTextItems;
+static UINT				inkInputTextFront;
+static UINT				inkInputTextRear;
+static UINT				inkInputTextMax;
+static UINT*			inkInputGameBuffer;
+static UINT				inkInputGameItems;
+static UINT				inkInputGameFront;
+static UINT				inkInputGameRear;
+static UINT				inkInputGameMax;
+static UINT*			inkInputGameStatus;
+static UINT2*			inkInputMouseBuffer;
+static UINT				inkInputMouseItems;
+static UINT				inkInputMouseFront;
+static UINT				inkInputMouseRear;
+static UINT				inkInputMouseMax;
+
+
+
+
+// ----Code----------------------------------------------------------
+
+
+/*
+Class:	inkInput
+
+First of all inkInput::StartService() must be called before any other
+function is used.
+At the end of the game, inkInput::StopService() must be called before exit.
+*/
+class inkInput
+{
+	// Input Handling Functions Declarations
+	public:
+	int				StartService(char mode, void* inkInputControl);
+	void			StopService(void);
+	UINT			GetKey(void);
+	UINT			GetCodedKey(void);
+	UINT			GetKeyFromCode(UINT k);
+	UINT2			GetMouse(void);
+	void			Flush(void);
+	int				IsKeyPressed(int key);
+	void			SetControl(int key, int inkInputControl);
+	int				GetControl(int key);
+	void			LoadControls(void* ctrl);
+	void			SaveControls(void* ctrl);
+	int				GetPressedKeys(void);
+	int				GetKeyboardDelay(void);
+	void			SetKeyboardDelay(UINT x);
+	int				GetKeyboardSpeed(void);
+	void			SetKeyboardSpeed(UINT x);
+	MOUSE_SETTINGS	GetMouseInformation(void);
+	void			SetMouseInformation(MOUSE_SETTINGS x);
+};
+
+
+
+// Start the Input Service with Text Mode(1) or Gaming Mode(2)
+BOOL	inkInput::StartService(char mode, void* control)
+{
+	SuspendThread(inkWindowThread);
+	if(inkInputKeyMode)inkInput::StopService();	// Already Started ?
+
+	// Text Mode
+	if(mode == 1)
+	{
+		inkInputBaseMem = (void*)GlobalAlloc(GMEM_FIXED|GMEM_ZEROINIT, _In_TextSizeB + _In_MouseSizeB);
+		inkInputTextBuffer = (UBYTE*)inkInputBaseMem;
+		inkInputMouseBuffer = (UINT2*)((char*)inkInputTextBuffer + _In_TextSizeB);
+		Flush();
+		inkInputKeyMode = 1;
+		
+		// Set WM_Handler
+		WM_Handler[WM_CHAR] = Msg_WM_CHAR;
+		WM_Handler[WM_SYSCHAR] = Msg_WM_SYSCHAR;
+		WM_Handler[WM_KEYDOWN] = NULL;
+		WM_Handler[WM_SYSKEYDOWN] = NULL;
+		WM_Handler[WM_KEYUP] = NULL;
+		WM_Handler[WM_SYSKEYUP] = NULL;
+		WM_Handler[WM_LBUTTONDOWN] = Msg_WM_LBUTTONDOWN_Text;
+		WM_Handler[WM_RBUTTONDOWN] = Msg_WM_RBUTTONDOWN_Text;
+		WM_Handler[WM_MBUTTONDOWN] = Msg_WM_MBUTTONDOWN_Text;
+		WM_Handler[WM_LBUTTONUP] = Msg_WM_LBUTTONUP_Text;
+		WM_Handler[WM_RBUTTONUP] = Msg_WM_RBUTTONUP_Text;
+		WM_Handler[WM_MBUTTONUP] = Msg_WM_MBUTTONUP_Text;
+		WM_Handler[WM_LBUTTONDBLCLK] = Msg_WM_LBUTTONDBLCLK_Text;
+		WM_Handler[WM_RBUTTONDBLCLK] = Msg_WM_RBUTTONDBLCLK_Text;
+		WM_Handler[WM_MBUTTONDBLCLK] = Msg_WM_MBUTTONDBLCLK_Text;
+		WM_Handler[WM_MOUSEWHEEL] = Msg_WM_MOUSEWHEEL_Text;
+		WM_Handler[WM_MOUSEMOVE] = Msg_WM_MOUSEMOVE_Text;
+		ResumeThread(inkWindowThread);
+		return(TRUE);
+	}
+	// Gaming Mode
+	else if(mode == 2)
+	{
+		inkInputBaseMem = (void*)GlobalAlloc(GMEM_FIXED|GMEM_ZEROINIT, _In_inkInputControlSizeB + _In_inkInputGameStatusSizeB + _In_GameSizeB);
+		inkInputControl = (UBYTE*)inkInputBaseMem;
+		inkInputGameStatus = (UINT*)((char*)inkInputControl + _In_inkInputControlSizeB);
+		inkInputGameBuffer = (UINT*)((char*)inkInputGameStatus + _In_inkInputGameStatusSizeB);
+		LoadControls(control);
+		Flush();
+		inkInputKeyMode = 2;
+		
+		// Set WM_Handler
+		WM_Handler[WM_CHAR] = NULL;
+		WM_Handler[WM_SYSCHAR] = NULL;
+		WM_Handler[WM_KEYDOWN] = Msg_WM_KEYDOWN;
+		WM_Handler[WM_SYSKEYDOWN] = Msg_WM_SYSKEYDOWN;
+		WM_Handler[WM_KEYUP] = Msg_WM_KEYUP;
+		WM_Handler[WM_SYSKEYUP] = Msg_WM_SYSKEYUP;
+		WM_Handler[WM_LBUTTONDOWN] = Msg_WM_LBUTTONDOWN_Gaming;
+		WM_Handler[WM_RBUTTONDOWN] = Msg_WM_RBUTTONDOWN_Gaming;
+		WM_Handler[WM_MBUTTONDOWN] = Msg_WM_MBUTTONDOWN_Gaming;
+		WM_Handler[WM_LBUTTONUP] = Msg_WM_LBUTTONUP_Gaming;
+		WM_Handler[WM_RBUTTONUP] = Msg_WM_RBUTTONUP_Gaming;
+		WM_Handler[WM_MBUTTONUP] = Msg_WM_MBUTTONUP_Gaming;
+		WM_Handler[WM_LBUTTONDBLCLK] = Msg_WM_LBUTTONDBLCLK_Gaming;
+		WM_Handler[WM_RBUTTONDBLCLK] = Msg_WM_RBUTTONDBLCLK_Gaming;
+		WM_Handler[WM_MBUTTONDBLCLK] = Msg_WM_MBUTTONDBLCLK_Gaming;
+		WM_Handler[WM_MOUSEWHEEL] = Msg_WM_MOUSEWHEEL_Gaming;
+		WM_Handler[WM_MOUSEMOVE] = Msg_WM_MOUSEMOVE_Gaming;
+		ResumeThread(inkWindowThread);
+		return(TRUE);
+	}
+	ResumeThread(inkWindowThread);
+	return(FALSE);
+}
+
+
+
+void	inkInput::StopService(void)
+{
+	if(!inkInputKeyMode)return;
+	inkWindowStopServiceRequest = TRUE;		// Request Window Service Thread to allow to stop a service safely
+	while(inkWindowStopServiceReady);			// Wait till Windows Service is ready
+	SuspendThread(inkWindowThread);			// Suspend Windows Service
+	inkInputKeyMode = 0;
+	WM_Handler[WM_CHAR] = NULL;
+	WM_Handler[WM_SYSCHAR] = NULL;
+	WM_Handler[WM_KEYDOWN] = NULL;
+	WM_Handler[WM_SYSKEYDOWN] = NULL;
+	WM_Handler[WM_KEYUP] = NULL;
+	WM_Handler[WM_SYSKEYUP] = NULL;
+	WM_Handler[WM_LBUTTONDOWN] = NULL;
+	WM_Handler[WM_RBUTTONDOWN] = NULL;
+	WM_Handler[WM_MBUTTONDOWN] = NULL;
+	WM_Handler[WM_LBUTTONUP] = NULL;
+	WM_Handler[WM_RBUTTONUP] = NULL;
+	WM_Handler[WM_MBUTTONUP] = NULL;
+	WM_Handler[WM_LBUTTONDBLCLK] = NULL;
+	WM_Handler[WM_RBUTTONDBLCLK] = NULL;
+	WM_Handler[WM_MBUTTONDBLCLK] = NULL;
+	WM_Handler[WM_MOUSEWHEEL] = NULL;
+	WM_Handler[WM_MOUSEMOVE] = NULL;
+	GlobalFree(inkInputBaseMem);
+	inkWindowStopServiceRequest = FALSE;
+	inkWindowStopServiceReady = FALSE;
+	ResumeThread(inkWindowThread);
+}
+
+
+UINT	inkInput::GetKey(void)
+{
+	UINT	k = -1;
+	if(inkInputKeyMode == 2)
+	{
+		inkDeleteQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameFront, inkInputGameMax, k)
+		return(inkInputControl[k]);
+	}
+	inkDeleteQueue(inkInputTextBuffer, inkInputTextItems, inkInputTextFront, inkInputTextMax, k)
+	return(k);
+}
+
+
+UINT	inkInput::GetCodedKey(void)
+{
+	UINT	k = -1;
+	if(inkInputKeyMode == 2)
+	{
+		inkDeleteQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameFront, inkInputGameMax, k)
+		return(k);
+	}
+	inkDeleteQueue(inkInputTextBuffer, inkInputTextItems, inkInputTextFront, inkInputTextMax, k)
+	return(k);
+}
+
+
+UINT	inkInput::GetKeyFromCode(UINT k)
+{
+	return(inkInputControl[k]);
+}
+
+
+UINT2	inkInput::GetMouse(void)
+{
+	UINT2 k;
+	k.low = -1;
+	k.high = -1;
+	if(inkInputKeyMode == 1)
+		inkDeleteQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseFront, inkInputMouseMax, k)
+	return(k);
+}
+
+
+
+// Empties all the input buffers
+void	inkInput::Flush(void)
+{
+	BOOL	StopIt;
+	if(!(inkWindowStopServiceReady))
+	{
+		StopIt = TRUE;
+		inkWindowStopServiceRequest = TRUE;
+		while(inkWindowStopServiceReady);
+		SuspendThread(inkWindowThread);
+	}
+	inkInputTextItems = 0;
+	inkInputTextFront = 0;
+	inkInputTextRear = 0;
+	inkInputGameItems = 0;
+	inkInputGameFront = 0;
+	inkInputGameRear = 0;
+	inkInputMouseItems = 0;
+	inkInputMouseFront = 0;
+	inkInputMouseRear = 0;
+	if(StopIt)
+	{
+		inkWindowStopServiceRequest = FALSE;
+		inkWindowStopServiceReady = FALSE;
+		ResumeThread(inkWindowThread);
+	}
+}
+
+
+
+
+BOOL	inkInput::IsKeyPressed(int key)
+{
+	if(inkInputKeyMode == 2)
+		return((inkInputGameStatus[k >> 5] & (1<<(k & 31))) > 0);
+	return(FALSE);
+}
+
+
+
+
+void	inkInput::SetControl(int key, int inkInputControl)
+{
+	if(inkInputKeyMode == 2)
+		inkInputControl[key & 0xFF] = (UCHAR)(inkInputControl & 0xFF);
+}
+
+
+int		inkInput::GetControl(int key)
+{
+	if(inkInputKeyMode == 2)
+		return(inkInputControl[key & 0xFF]);
+	return(-1);
+}
+
+
+
+// Load custom inkInputControls or the default one (NULL)
+void	inkInput::LoadControls(void* ctrl)
+{
+	int i;
+	
+	if(inkInputKeyMode == 2)
+	{
+		// Load default inkInputControls ?
+		if(ctrl == NULL)
+		{
+			for(i=0; i<_In_inkInputControlSizeB; i++)
+				inkInputControl[i] = i;
+			return;
+		}
+		else
+		{
+			CopyMemory(inkInputControl, ctrl, _In_inkInputControlSizeB);
+		}
+	}
+}
+
+
+
+// Save the current inkInputControls to a memory location
+void	inkInput::SaveControls(void* ctrl)
+{
+	if(inkInputKeyMode == 2)
+	{
+		CopyMemory(ctrl, inkInputControl, _In_inkInputControlSizeB);
+	}
+}
+
+
+
+
+int		inkInput::GetPressedKeys(void)
+{
+	UINT* status;
+	int i, j, c;
+
+	if(inkInputKeyMode == 2)
+	{
+		c = 0;
+		status = inkInputGameStatus;
+		for(i=0; i<_In_inkInputGameStatusSizeB; i+=4)
+			{
+		if(status[i] == 0)continue;
+			j = 0;
+			c = 1;
+			while(status[i] != 0)
+			{
+				if(status[i] & 1)
+					inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, inkInputControl[(i<<5)|j]|0x400)
+				status[i] = status[i] >> 1;
+				j++;
+			}
+		}
+	}
+	return(-1);
+}
+
+
+
+// Get the number of butons on the mouse (0 = no mouse)
+// Get the keyboard initial delay time
+int		inkInput::GetKeyboardDelay(void)
+{
+	UINT x;
+	LPUINT y;
+	y = &x;
+	SystemParametersInfo(SPI_GETKEYBOARDDELAY, 0, y, 0);
+	return(x);
+}
+
+
+
+// Set the keyboard initial delay time
+void	inkInput::SetKeyboardDelay(UINT x)
+{
+	SystemParametersInfo(SPI_SETKEYBOARDDELAY, x, NULL, 0);
+}
+
+
+
+// Get the keyboard speed / repeat rate
+int		inkInput::GetKeyboardSpeed(void)
+{
+	UINT x;
+	LPUINT y;
+	y = &x;
+	SystemParametersInfo(SPI_GETKEYBOARDSPEED, 0, y, 0);
+	return(x);
+}
+
+
+
+// Set the keyboard speed / repeat rate
+void	inkInput::SetKeyboardSpeed(UINT x)
+{
+	SystemParametersInfo(SPI_SETKEYBOARDSPEED, x, NULL, 0);
+}
+
+
+
+// Get mouse x and y threshold values and mouse speed in 3 integer array
+MOUSE_SETTINGS	inkInput::GetMouseInformation(void)
+{
+	MOUSE_SETTINGS x;
+	SystemParametersInfo(SPI_GETMOUSE, 0, (UINT*)&x, 0);
+	return(x);
+}
+
+
+
+// Set mouse x and y threshold values and mouse speed in 3 integer array
+void	inkInput::SetMouseInformation(MOUSE_SETTINGS x)
+{
+	SystemParametersInfo(SPI_SETMOUSE, 0, (UINT*)&x, 0);
+}
+
+
+
+// WM_CHAR Message Handler (Text)
+PROC	Msg_WM_CHAR(_MSG_PARAMS)
+{
+	inkInsertQueue(inkInputTextBuffer, inkInputTextItems, inkInputTextRear, inkInputTextMax, wParam)
+	return(0);
+}
+
+
+
+// WM_SYSCHAR Message Handler (Text)
+PROC	Msg_WM_SYSCHAR(_MSG_PARAMS)
+{
+	inkInsertQueue(inkInputTextBuffer, inkInputTextItems, inkInputTextRear, inkInputTextMax, wParam|0x80)
+	return(0);
+}
+
+
+
+// WM_KEYDOWN Message Handler (Gaming)
+PROC	Msg_WM_KEYDOWN(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[wParam];
+	k = (lParam & 0xE0000000) | (((lParam & 0x0000FFFF) << 8) | wParam);
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] |= (1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_SYSKEYDOWN Message Handler (Gaming)
+PROC	Msg_WM_SYSKEYDOWN(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[wParam];
+	k = (lParam & 0xE0000000) | ((((lParam & 0x0000FFFF) << 8) | wParam) | 0x10000000);
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[wParam >> 5] |= (1 << (wParam & 31));
+	return(0);
+}
+
+
+
+// WM_KEYUP Message Handler (Gaming)
+PROC	Msg_WM_KEYUP(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[wParam];
+	k = (lParam & 0xE0000000) | (((lParam & 0x0000FFFF) << 8) | wParam);
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] &= ~(1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_SYSKEYUP Message Handler (Gaming)
+PROC	Msg_WM_SYSKEYUP(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[wParam];
+	k = (lParam & 0xE0000000) | ((((lParam & 0x0000FFFF) << 8) | wParam) | 0x10000000);
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] &= ~(1 << (l & 31));
+	return(0);
+	}
+
+
+
+// WM_LBUTTONDOWN Message Handler (Text)
+PROC	Msg_WM_LBUTTONDOWN_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_LBUTTONDOWN Message Handler (Gaming)
+PROC	Msg_WM_LBUTTONDOWN_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseLeft];
+	k = (0x40000000 & (((inkInputGameStatus[l >> 5] & (1<<(l & 31))) == 0) - 1)) | _In_Key_MouseLeft;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] |= (1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_RBUTTONDOWN Message Handler (Text)
+PROC	Msg_WM_RBUTTONDOWN_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_RBUTTONDOWN Message Handler (Gaming)
+PROC	Msg_WM_RBUTTONDOWN_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseRight];
+	k = (0x40000000 & (((inkInputGameStatus[l >> 5] & (1<<(l & 31))) == 0) - 1)) | _In_Key_MouseRight;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] |= (1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_MBUTTONDOWN Message Handler (Text)
+PROC	Msg_WM_MBUTTONDOWN_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_MBUTTONDOWN Message Handler (Gaming)
+PROC	Msg_WM_MBUTTONDOWN_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseMiddle];
+	k = (0x40000000 & (((inkInputGameStatus[l >> 5] & (1<<(l & 31))) == 0) - 1)) | _In_Key_MouseMiddle;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] |= (1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_LBUTTONUP Message Handler (Text)
+PROC	Msg_WM_LBUTTONUP_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_LBUTTONUP Message Handler (Gaming)
+PROC	Msg_WM_LBUTTONUP_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseLeft];
+	k = 0xC0000000 | _In_Key_MouseLeft;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] &= ~(1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_RBUTTONUP Message Handler (Text)
+PROC	Msg_WM_RBUTTONUP_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_RBUTTONUP Message Handler (Gaming)
+PROC	Msg_WM_RBUTTONUP_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseRight];
+	k = 0xC0000000 | _In_Key_MouseRight;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] &= ~(1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_MBUTTONUP Message Handler (Text)
+PROC	Msg_WM_MBUTTONUP_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);
+}
+
+
+
+// WM_MBUTTONUP Message Handler (Gaming)
+PROC	Msg_WM_MBUTTONUP_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = inkInputControl[_In_Key_MouseMiddle];
+	k = 0xC0000000 | _In_Key_MouseMiddle;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	inkInputGameStatus[l >> 5] &= ~(1 << (l & 31));
+	return(0);
+}
+
+
+
+// WM_LBUTTONDBLCLK Message Handler (Text)
+PROC	Msg_WM_LBUTTONDBLCLK_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);	
+}
+
+
+
+// WM_LBUTTONDBLCLK Message Handler (Gaming)
+PROC	Msg_WM_LBUTTONDBLCLK_Gaming(_MSG_PARAMS)
+{
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, _In_Key_MouseLeftDblClk)
+	return(0);
+}
+
+
+
+// WM_RBUTTONDBLCLK Message Handler (Text)
+PROC	Msg_WM_RBUTTONDBLCLK_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);	
+}
+
+
+
+// WM_RBUTTONDBLCLK Message Handler (Gaming)
+PROC	Msg_WM_RBUTTONDBLCLK_Gaming(_MSG_PARAMS)
+{
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, _In_Key_MouseRightDblClk)
+	return(0);
+}
+
+
+
+// WM_MBUTTONDBLCLK Message Handler (Text)
+PROC	Msg_WM_MBUTTONDBLCLK_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);	
+}
+
+
+
+// WM_MBUTTONDBLCLK Message Handler (Gaming)
+PROC	Msg_WM_MBUTTONDBLCLK_Gaming(_MSG_PARAMS)
+{
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, _In_Key_MouseMiddleDblClk)
+	return(0);
+}
+
+
+
+// WM_MOUSEWHEEL Message Handler (Text)
+PROC	Msg_WM_MOUSEWHEEL_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);	
+}
+
+
+
+// WM_MOUSEWHEEL Message Handler (Gaming)
+PROC	Msg_WM_MOUSEWHEEL_Gaming(_MSG_PARAMS)
+{
+	UINT k, l;
+	l = (wParam>0)?_In_Key_MouseWheelPlus:_In_Key_MouseWheelMinus;
+	k = ((wParam & 0xFFFF0000) >> 8) | l;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k)
+	return(0);
+}
+
+
+
+// WM_MOUSEMOVE Message Handler (Text)
+PROC	Msg_WM_MOUSEMOVE_Text(_MSG_PARAMS)
+{
+	UINT2	k;
+	k.low = wParam;
+	k.high = lParam;
+	inkInsertQueue(inkInputMouseBuffer, inkInputMouseItems, inkInputMouseRear, inkInputMouseMax, k)
+	return(0);	
+}
+
+
+
+// WM_MOUSEMOVE Message Handler (Gaming)
+PROC	Msg_WM_MOUSEMOVE_Gaming(_MSG_PARAMS)
+{
+	UINT k1, k2, k3, k4;
+	int delX, delY;
+	delX = (lParam & 0xFFFF) - _inkMouseHoldPositionX;
+	delY = (lParam >> 16) - _inkMouseHoldPositionY;
+	k1 = ((delX == 0) - 1) & _In_Key_MouseXmove;
+	k2 = ((delY == 0) - 1) & _In_Key_MouseYmove;
+	k3 = ((delX & 0xFFFF) << 8) | k1;
+	k4 = ((delY & 0xFFFF) << 8) | k2;
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k3)
+	inkInsertQueue(inkInputGameBuffer, inkInputGameItems, inkInputGameRear, inkInputGameMax, k4)
+	mouse_event(MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_MOVE, _inkMouseHoldPositionX, _inkMouseHoldPositionY, 0, 0);
+	return(0);
+}
+
+
+
+
+
+#endif
+
+

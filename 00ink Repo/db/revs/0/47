@@ -1,0 +1,257 @@
+PLAIN
+K 13
+theBigOne.log
+V 22
+file 1u-2.0.r46/237736
+K 27
+theBigOne.unsuccessfulbuild
+V 21
+file 9-24.0.r24/32432
+END
+ENDREP
+id: w-2.0.r47/124
+type: dir
+pred: w-2.0.r46/238583
+count: 14
+text: 47 0 111 111 765e12aa3b25b3042ccd58859e34dbdd
+cpath: /DLL Build/theBigOne/theBigOne/Debug
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 17
+dir w-2.0.r47/124
+K 10
+ReadMe.txt
+V 23
+file 30-2.0.r2/27833265
+K 14
+consoleGuy.cpp
+V 19
+file 3-15.0.r15/641
+K 11
+dllmain.cpp
+V 22
+file q-2.0.r2/27819123
+K 12
+errorGuy.cpp
+V 22
+file 5-15.0.r46/239008
+K 10
+errorGuy.h
+V 22
+file 3-34.0.r46/239248
+K 11
+fileGuy.cpp
+V 17
+file 6-15.0.r15/0
+K 16
+interruptGuy.cpp
+V 18
+file 3-5.0.r21/396
+K 14
+interruptGuy.h
+V 21
+file b-24.0.r24/34603
+K 7
+macro.h
+V 22
+file 2q-2.0.r38/169204
+K 11
+memoryGuy.h
+V 22
+file 9-40.0.r46/237497
+K 14
+networkGuy.cpp
+V 19
+file 7-15.0.r15/211
+K 10
+stdafx.cpp
+V 23
+file 2w-2.0.r2/27832836
+K 8
+stdafx.h
+V 22
+file n-2.0.r2/27818913
+K 13
+stringGuy.cpp
+V 22
+file 3-16.0.r41/875850
+K 11
+stringGuy.h
+V 22
+file 3-26.0.r41/872941
+K 11
+targetver.h
+V 23
+file 2u-2.0.r2/27832621
+K 13
+theBigOne.cpp
+V 21
+file s-2.0.r28/745909
+K 11
+theBigOne.h
+V 23
+file 2y-2.0.r2/27833050
+K 17
+theBigOne.vcxproj
+V 22
+file 36-2.0.r46/238763
+K 25
+theBigOne.vcxproj.filters
+V 21
+file u-2.0.r46/239486
+K 22
+theBigOne.vcxproj.user
+V 23
+file 32-2.0.r2/27833480
+K 19
+threadErrorCommon.h
+V 22
+file 3-33.0.r46/237250
+K 13
+threadGuy.cpp
+V 22
+file 34-2.0.r46/239737
+K 11
+threadGuy.h
+V 22
+file c-24.0.r44/191314
+K 7
+win32.h
+V 23
+file 2s-2.0.r2/27832409
+K 13
+windowGuy.cpp
+V 19
+file 8-15.0.r15/857
+END
+ENDREP
+id: m-2.0.r47/1546
+type: dir
+pred: m-2.0.r46/241228
+count: 39
+text: 47 296 1237 1237 c4390b0f54ca150674edea445ab0b85b
+cpath: /DLL Build/theBigOne/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 21
+dir 38-2.0.r28/751098
+K 4
+ipch
+V 19
+dir g-2.0.r24/31367
+K 9
+theBigOne
+V 18
+dir m-2.0.r47/1546
+K 13
+theBigOne.sdf
+V 21
+file 9-2.0.r46/236962
+K 13
+theBigOne.sln
+V 22
+file c-2.0.r2/27817560
+K 13
+theBigOne.suo
+V 22
+file 3k-2.0.r46/241404
+END
+ENDREP
+id: 7-2.0.r47/1983
+type: dir
+pred: 7-2.0.r46/241962
+count: 45
+text: 47 1717 253 253 8b077bfe073cecf76968b873063784bb
+cpath: /DLL Build/theBigOne
+copyroot: 0 /
+
+PLAIN
+K 9
+theBigOne
+V 18
+dir 7-2.0.r47/1983
+END
+ENDREP
+id: 6-2.0.r47/2198
+type: dir
+pred: 6-2.0.r46/242183
+count: 45
+text: 47 2143 42 42 e17150ac96ca20b1cbbf8227e030cdad
+cpath: /DLL Build
+copyroot: 0 /
+
+PLAIN
+K 9
+DLL Build
+V 18
+dir 6-2.0.r47/2198
+K 8
+DLL Test
+V 23
+dir 3m-2.0.r10/16055736
+K 10
+Data Files
+V 22
+dir 4y-2.0.r2/27845271
+K 6
+Source
+V 21
+dir 0-2.0.r2/27816799
+K 13
+Support Tools
+V 22
+dir 4z-2.0.r2/27845347
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+K 5
+zInfo
+V 21
+dir 2-2.0.r2/27817103
+END
+ENDREP
+id: 0.0.r47/2704
+type: dir
+pred: 0.0.r46/242695
+count: 47
+text: 47 2346 345 345 499fc46c77719efb2ad9c52afba81578
+cpath: /
+copyroot: 0 /
+
+7-40.0.r40/1362130 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/theBigOne.lastbuildstate
+
+4-40.0.r40/1362431 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/dllmain.obj
+
+18-2.0.r44/192403 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/CL.write.1.tlog
+
+1k-2.0.r44/192708 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/CL.read.1.tlog
+
+8-40.0.r40/1362771 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/theBigOne.pch
+
+24-2.0.r44/193013 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/vc100.pdb
+
+2m-2.0.r38/168221 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/cl.command.1.tlog
+
+6-40.0.r40/1361848 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/stdafx.obj
+
+4-43.0.r44/191552 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/stringGuy.obj
+
+1y-2.0.r44/192100 delete-file false false /DLL Build/theBigOne/theBigOne/Debug/vc100.idb
+
+
+2704 2841

@@ -1,0 +1,13 @@
+K 10
+svn:author
+V 2
+hp
+K 8
+svn:date
+V 27
+2011-12-19T12:41:19.495395Z
+K 7
+svn:log
+V 39
+win32.h updated for use with Visual C++
+END

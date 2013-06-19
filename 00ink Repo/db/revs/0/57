@@ -1,0 +1,348 @@
+PLAIN
+END
+ENDREP
+id: 9-55.0.r57/17
+type: dir
+pred: 9-55.0.r55/18488063
+count: 1
+text: 57 0 4 4 2d2977d1c96f487abe4a1e202dd03b4e
+cpath: /DLL Build/theBigConsole/ipch
+copyroot: 0 /
+
+PLAIN
+K 14
+CL.read.1.tlog
+V 23
+file h-55.0.r56/8851754
+K 15
+CL.write.1.tlog
+V 23
+file j-55.0.r56/8848998
+K 17
+cl.command.1.tlog
+V 23
+file k-55.0.r56/8852392
+K 23
+link-cvtres.read.1.tlog
+V 24
+file l-55.0.r55/18497153
+K 24
+link-cvtres.write.1.tlog
+V 24
+file m-55.0.r55/18493033
+K 19
+link.command.1.tlog
+V 23
+file n-55.0.r56/8852072
+K 16
+link.read.1.tlog
+V 23
+file o-55.0.r56/8851437
+K 17
+link.write.1.tlog
+V 23
+file p-55.0.r56/8848678
+K 17
+mt.command.1.tlog
+V 23
+file q-55.0.r56/8850268
+K 14
+mt.read.1.tlog
+V 23
+file r-55.0.r56/8849316
+K 15
+mt.write.1.tlog
+V 24
+file s-55.0.r55/18496047
+K 17
+rc.command.1.tlog
+V 23
+file t-55.0.r56/8848041
+K 14
+rc.read.1.tlog
+V 23
+file u-55.0.r56/8847725
+K 15
+rc.write.1.tlog
+V 23
+file v-55.0.r56/8849951
+K 10
+stdafx.obj
+V 23
+file w-55.0.r56/8850587
+K 32
+theBigConsole.exe.embed.manifest
+V 24
+file x-55.0.r55/18491031
+K 36
+theBigConsole.exe.embed.manifest.res
+V 24
+file y-55.0.r55/18496772
+K 39
+theBigConsole.exe.intermediate.manifest
+V 24
+file z-55.0.r55/18490412
+K 28
+theBigConsole.lastbuildstate
+V 24
+file 10-55.0.r56/8851164
+K 17
+theBigConsole.log
+V 24
+file 11-55.0.r56/8850900
+K 25
+theBigConsole_manifest.rc
+V 25
+file 13-55.0.r55/18497879
+K 9
+vc100.idb
+V 24
+file 14-55.0.r56/8848360
+K 9
+vc100.pdb
+V 24
+file 15-55.0.r56/8849633
+END
+ENDREP
+id: f-55.0.r57/1454
+type: dir
+pred: f-55.0.r56/8854053
+count: 2
+text: 57 180 1261 1261 c8dc1dea970022582435a86e3a77fb7b
+cpath: /DLL Build/theBigConsole/theBigConsole/Debug
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 19
+dir f-55.0.r57/1454
+K 10
+ReadMe.txt
+V 25
+file 16-55.0.r55/18503385
+K 14
+consoleGuy.cpp
+V 25
+file 17-55.0.r55/18502929
+K 11
+dllmain.cpp
+V 25
+file 18-55.0.r55/18501780
+K 12
+errorGuy.cpp
+V 25
+file 19-55.0.r55/18501552
+K 10
+errorGuy.h
+V 25
+file 1a-55.0.r55/18502240
+K 11
+fileGuy.cpp
+V 25
+file 1b-55.0.r55/18489597
+K 16
+interruptGuy.cpp
+V 25
+file 1c-55.0.r55/18502007
+K 14
+interruptGuy.h
+V 25
+file 1d-55.0.r55/18502699
+K 10
+logGuy.cpp
+V 25
+file 1e-55.0.r55/18500182
+K 7
+macro.h
+V 25
+file 1f-55.0.r55/18499959
+K 11
+memoryGuy.h
+V 24
+file 1g-55.0.r56/8847473
+K 14
+networkGuy.cpp
+V 25
+file 1h-55.0.r55/18501320
+K 10
+stdafx.cpp
+V 25
+file 1i-55.0.r55/18503161
+K 8
+stdafx.h
+V 25
+file 1j-55.0.r55/18488215
+K 13
+stringGuy.cpp
+V 25
+file 1k-55.0.r55/18503613
+K 11
+stringGuy.h
+V 25
+file 1l-55.0.r55/18488915
+K 11
+targetver.h
+V 25
+file 1m-55.0.r55/18500624
+K 17
+theBigConsole.cpp
+V 24
+file 1n-55.0.r56/8854248
+K 21
+theBigConsole.vcxproj
+V 25
+file 1o-55.0.r55/18488440
+K 29
+theBigConsole.vcxproj.filters
+V 25
+file 1p-55.0.r55/18499712
+K 26
+theBigConsole.vcxproj.user
+V 25
+file 1q-55.0.r55/18501078
+K 13
+theBigOne.cpp
+V 25
+file 1r-55.0.r55/18489826
+K 11
+theBigOne.h
+V 25
+file 1s-55.0.r55/18500851
+K 19
+threadErrorCommon.h
+V 25
+file 1t-55.0.r55/18488680
+K 13
+threadGuy.cpp
+V 25
+file 1u-55.0.r55/18503841
+K 11
+threadGuy.h
+V 25
+file 1v-55.0.r55/18489142
+K 7
+win32.h
+V 25
+file 1w-55.0.r55/18500402
+K 13
+windowGuy.cpp
+V 25
+file 1x-55.0.r55/18504072
+END
+ENDREP
+id: e-55.0.r57/3097
+type: dir
+pred: e-55.0.r56/8855965
+count: 2
+text: 57 1641 1443 1443 fb65866f7d346fccbac1ce2621948abd
+cpath: /DLL Build/theBigConsole/theBigConsole
+copyroot: 0 /
+
+PLAIN
+K 5
+Debug
+V 22
+dir 3-55.0.r56/8857246
+K 4
+ipch
+V 17
+dir 9-55.0.r57/17
+K 13
+theBigConsole
+V 19
+dir e-55.0.r57/3097
+K 17
+theBigConsole.sdf
+V 24
+file 1y-55.0.r56/8847164
+K 17
+theBigConsole.sln
+V 25
+file 1z-55.0.r55/18487129
+K 17
+theBigConsole.suo
+V 24
+file 20-55.0.r56/8857425
+END
+ENDREP
+id: 1-55.0.r57/3570
+type: dir
+pred: 1-55.0.r56/8858028
+count: 2
+text: 57 3279 278 278 de8a92fa53012808e20026389190b314
+cpath: /DLL Build/theBigConsole
+copyroot: 0 /
+
+PLAIN
+K 13
+theBigConsole
+V 19
+dir 1-55.0.r57/3570
+K 9
+theBigOne
+V 22
+dir 7-2.0.r55/18486614
+END
+ENDREP
+id: 6-2.0.r57/3839
+type: dir
+pred: 6-2.0.r56/8858307
+count: 55
+text: 57 3736 90 90 4b7417415c1799441980bbbc6099387c
+cpath: /DLL Build
+copyroot: 0 /
+
+PLAIN
+K 9
+DLL Build
+V 18
+dir 6-2.0.r57/3839
+K 8
+DLL Test
+V 23
+dir 3m-2.0.r10/16055736
+K 10
+Data Files
+V 22
+dir 4y-2.0.r2/27845271
+K 6
+Source
+V 21
+dir 0-2.0.r2/27816799
+K 13
+Support Tools
+V 22
+dir 4z-2.0.r2/27845347
+K 8
+branches
+V 15
+dir 2-1.0.r1/63
+K 4
+tags
+V 16
+dir 3-1.0.r1/130
+K 5
+trunk
+V 14
+dir 0-1.0.r1/0
+K 5
+zInfo
+V 21
+dir 2-2.0.r2/27817103
+END
+ENDREP
+id: 0.0.r57/4346
+type: dir
+pred: 0.0.r56/8858824
+count: 57
+text: 57 3988 345 345 8808ec93141859b7eaf52ba597669b98
+cpath: /
+copyroot: 0 /
+
+a-55.0.r55/18487814 delete-dir false false /DLL Build/theBigConsole/ipch/thebigconsole-1bdd24c7
+
+12-55.0.r55/18491284 delete-file false false /DLL Build/theBigConsole/theBigConsole/Debug/theBigConsole.unsuccessfulbuild
+
+
+4346 4484
